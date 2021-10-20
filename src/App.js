@@ -1,8 +1,10 @@
+import AboutUs from "./pages/AboutUs";
+
 function App() {
   return (
-    <div>
-      <h1>Film</h1>
-    </div>
+    <>
+      <AboutUs />
+    </>
   );
 }
 
