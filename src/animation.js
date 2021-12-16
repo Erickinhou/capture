@@ -7,7 +7,7 @@ export const pageAnimation = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1,
+      duration: 0.5,
       when: "beforeChildren",
       staggerChildren: 0.25,
     },
@@ -43,7 +43,7 @@ export const titleAnimation = {
 
 export const photoAnimation = {
   hidden: {
-    scale: 1.5,
+    scale: 1.2,
     opacity: 0,
   },
   show: {

@@ -1,8 +1,9 @@
 import React from "react";
-import home1 from "../img/home1.png";
-import { About, Description, Hide, Image } from "../styles";
 import { motion } from "framer-motion";
+import { About, Description, Hide, Image } from "../styles";
 import { titleAnimation, simpleFade, photoAnimation } from "../animation";
+import home1 from "../img/home1.png";
+import Wave from "../components/Wave";
 
 const AboutSection = () => {
   return (
@@ -34,6 +35,7 @@ const AboutSection = () => {
           alt="guy with the camera"
         />
       </Image>
+      <Wave />
     </About>
   );
 };
