@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useHistory, useParams } from "react-router-dom";
 import { movieState } from "../movieState";
+//Animations
+import { motion } from "framer-motion";
+import { pageAnimation, simpleFade } from "../animation";
 
 const MovieDetail = () => {
   const history = useHistory();
@@ -13,37 +16,61 @@ const MovieDetail = () => {
     const [currentMovie] = movies.filter(
       (stateMovie) => stateMovie.id === movieId
     );
-    console.log(currentMovie);
     setMovie(currentMovie);
     //this dependencies are important because I'm working with url, and if the url changes, my useEffect need to change too.
   }, [movies, movieId]);
-  if (!movie) {
-    return <h1>Not Find</h1>;
+  if (!movie && movie !== null) {
+    return (
+      <NotFind
+        variants={simpleFade}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+      >
+        Not Find
+      </NotFind>
+    );
   }
   return (
-    <Details>
-      <Headline>
-        <h1>{movie.title}</h1>
-        <img src={movie.mainImg} alt={movie.title} />
-      </Headline>
-      <Awards>
-        {movie.awards.map((award) => (
-          <Award
-            title={award?.title}
-            description={award?.description}
-            key={award?.title}
-          />
-        ))}
-      </Awards>
-      <ImageDisplay>
-        <img src={movie.secondaryImg} alt="movie" />
-      </ImageDisplay>
-    </Details>
+    <>
+      {movie !== null && (
+        <Details
+          variants={pageAnimation}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+        >
+          <Headline>
+            <h1>{movie.title}</h1>
+            <img src={movie.mainImg} alt={movie.title} />
+          </Headline>
+          <Awards>
+            {movie.awards.map((award) => (
+              <Award
+                title={award?.title}
+                description={award?.description}
+                key={award?.title}
+              />
+            ))}
+          </Awards>
+          <ImageDisplay>
+            <img src={movie.secondaryImg} alt="movie" />
+          </ImageDisplay>
+        </Details>
+      )}
+    </>
   );
 };
 
-const Details = styled.div`
+const Details = styled(motion.div)`
   color: white;
+`;
+
+const NotFind = styled(motion.h1)`
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-top: 10vh;
 `;
 
 const Headline = styled.div`
