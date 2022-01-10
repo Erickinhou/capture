@@ -19,6 +19,7 @@ import {
 const OurWork = () => {
   return (
     <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+      {/* This slider container is to underwrite the stagger propriety  */}
       <motion.div variants={sliderContainer}>
         <Frame1 variants={slider} />
         <Frame2 variants={slider} />
