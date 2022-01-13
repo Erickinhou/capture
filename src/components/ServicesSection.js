@@ -9,9 +9,18 @@ import money from "../img/money.svg";
 import teamwork from "../img/teamwork.svg";
 import home2 from "../img/home2.png";
 
+import { useScroll } from "../hooks/useScroll";
+import { scrollReveal } from "../animation";
+
 const ServicesSection = () => {
+  const [element, controls] = useScroll();
   return (
-    <Services>
+    <Services
+      variants={scrollReveal}
+      ref={element}
+      animate={controls}
+      initial="hidden"
+    >
       <Description>
         <h2>
           high <span> quality</span> services

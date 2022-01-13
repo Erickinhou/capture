@@ -3,51 +3,58 @@ import styled from "styled-components";
 import Toggle from "./Toggle";
 import { About } from "../styles";
 
+import { useScroll } from "../hooks/useScroll";
+import { scrollReveal } from "../animation";
+
 const FaqSection = () => {
+  const [element, controls] = useScroll();
   return (
-    <div>
-      <Faq>
-        <h2>
-          Any Questions <span>FAQ</span>
-        </h2>
-        <Toggle title="How do I start?">
-          <div className="answer">
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia,
-              deserunt.
-            </p>
-          </div>
-        </Toggle>
-        <Toggle title="Daily schedule">
-          <div className="answer">
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia,
-              deserunt.
-            </p>
-          </div>
-        </Toggle>
-        <Toggle title="Payment methods">
-          <div className="answer">
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia,
-              deserunt.
-            </p>
-          </div>
-        </Toggle>
-        <Toggle title="What products do you offer?">
-          <div className="answer">
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia,
-              deserunt.
-            </p>
-          </div>
-        </Toggle>
-      </Faq>
-    </div>
+    <Faq
+      variants={scrollReveal}
+      ref={element}
+      animate={controls}
+      initial="hidden"
+    >
+      <h2>
+        Any Questions <span>FAQ</span>
+      </h2>
+      <Toggle title="How do I start?">
+        <div className="answer">
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia,
+            deserunt.
+          </p>
+        </div>
+      </Toggle>
+      <Toggle title="Daily schedule">
+        <div className="answer">
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia,
+            deserunt.
+          </p>
+        </div>
+      </Toggle>
+      <Toggle title="Payment methods">
+        <div className="answer">
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia,
+            deserunt.
+          </p>
+        </div>
+      </Toggle>
+      <Toggle title="What products do you offer?">
+        <div className="answer">
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia,
+            deserunt.
+          </p>
+        </div>
+      </Toggle>
+    </Faq>
   );
 };
 

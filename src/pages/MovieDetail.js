@@ -41,11 +41,11 @@ const MovieDetail = () => {
           exit="exit"
         >
           <Headline>
-            <h1>{movie.title}</h1>
-            <img src={movie.mainImg} alt={movie.title} />
+            <h1>{movie?.title}</h1>
+            <img src={movie?.mainImg} alt={movie?.title} />
           </Headline>
           <Awards>
-            {movie.awards.map((award) => (
+            {movie?.awards?.map((award) => (
               <Award
                 title={award?.title}
                 description={award?.description}
