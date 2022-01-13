@@ -5,20 +5,18 @@ import FaqSection from "../components/FaqSection";
 //Animations
 import { motion } from "framer-motion";
 import { pageAnimation } from "../animation";
+import styled from "styled-components";
 
 const AboutUs = () => {
   return (
-    <motion.div
-      variants={pageAnimation}
-      initial="hidden"
-      animate="show"
-      exit="exit"
-    >
+    <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
       <AboutSection />
       <ServicesSection />
       <FaqSection />
-    </motion.div>
+    </Work>
   );
 };
-
+const Work = styled(motion.div)`
+  overflow: hidden;
+`;
 export default AboutUs;
