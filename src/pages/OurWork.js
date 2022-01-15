@@ -15,8 +15,11 @@ import {
   slider,
   sliderContainer,
 } from "../animation";
+import { useScroll } from "../hooks/useScroll";
 
 const OurWork = () => {
+  const [element, controls] = useScroll();
+  const [element2, controls2] = useScroll();
   return (
     <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit">
       {/* This slider container is to underwrite the stagger propriety  */}
@@ -35,17 +38,17 @@ const OurWork = () => {
           </Hide>
         </Link>
       </Movie>
-      <Movie>
+      <Movie ref={element} animate={controls} variants={simpleFade}>
         <h2>The Racer </h2>
-        <div className="line"></div>
+        <motion.div variants={lineAnimation} className="line"></motion.div>
         <Link to="/work/the-racer">
           <img src={theracer} alt="theracer" />
         </Link>
       </Movie>
-      <Movie>
+      <Movie e ref={element2} animate={controls2} variants={simpleFade}>
         <h2>Good Times</h2>
-        <div className="line"></div>
-        <Link to="/work/good-times">
+        <motion.div variants={lineAnimation} className="line"></motion.div>
+        <Link variants={lineAnimation} className="line" to="/work/good-times">
           <img src={goodtimes} alt="goodtimes" />
         </Link>
       </Movie>
@@ -62,7 +65,7 @@ const Work = styled(motion.div)`
     padding: 1rem 0;
   }
 `;
-const Movie = styled.div`
+const Movie = styled(motion.div)`
   padding-bottom: 10rem;
   .line {
     height: 0.5rem;
@@ -84,7 +87,7 @@ const Hide = styled.div`
 const Frame1 = styled(motion.div)`
   position: fixed;
   left: 0;
-  top: 10%;
+  top: 10vh;
   width: 100%;
   height: 100vh;
   background: #fffebf;
