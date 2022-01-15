@@ -41,7 +41,7 @@ const MovieDetail = () => {
           exit="exit"
         >
           <Headline>
-            <h1>{movie?.title}</h1>
+            <h2>{movie?.title}</h2>
             <img src={movie?.mainImg} alt={movie?.title} />
           </Headline>
           <Awards>
