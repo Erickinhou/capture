@@ -13,6 +13,15 @@ body{
   font-family: 'Inter', sans-serif;
 }
 
+html{
+  @media (max-width: 1300px)  {
+    font-size: 70%;
+  }
+  @media (max-width: 700px)  {
+    font-size: 60%;
+  }
+}
+
 button{
   font-weight: bold;
   font-size: 1.1rem;
@@ -23,6 +32,7 @@ button{
   color: white;
   transition: all 0.5s ease;
   font-family: 'Inter', sans-serif;
+  background-color: #1b1b1b;
   &:hover{
     background-color: #23d997;
     color: white;

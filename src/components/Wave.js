@@ -26,6 +26,9 @@ const WaveSvg = styled(motion.svg)`
   position: absolute;
   left: 0;
   z-index: 1;
+  @media screen and (max-width: 1300px) {
+    top: 50%;
+  }
 `;
 
 export default Wave;

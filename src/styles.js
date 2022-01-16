@@ -11,6 +11,11 @@ export const About = styled(motion.div)`
   padding: 5rem 10rem;
   color: white;
   gap: 5rem;
+  @media screen and (max-width: 1300px) {
+    padding: 2rem 4rem;
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 export const Description = styled.div`
   flex: 1;
@@ -18,6 +23,12 @@ export const Description = styled.div`
   z-index: 2;
   h2 {
     font-weight: lighter;
+  }
+  @media screen and (max-width: 1300px) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
   }
 `;
 

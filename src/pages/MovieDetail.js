@@ -88,6 +88,20 @@ const Headline = styled.div`
     height: 70vh;
     object-fit: cover;
   }
+  @media screen and (max-width: 1300px) {
+    height: 100vh;
+    padding-top: 0vh;
+    position: relative;
+    h2 {
+      position: relative;
+      display: block;
+      text-align: center;
+      padding: 10px 0;
+      top: 0%;
+      left: 0%;
+      transform: translate(0%, 0%);
+    }
+  }
 `;
 
 const Awards = styled.div`
@@ -96,6 +110,11 @@ const Awards = styled.div`
   margin: 5rem 10rem;
   align-items: center;
   justify-content: space-around;
+  @media screen and (max-width: 1300px) {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
 `;
 
 const StyleAward = styled.div`
@@ -111,6 +130,9 @@ const StyleAward = styled.div`
   }
   p {
     padding: 2rem 0rem;
+  }
+  @media screen and (max-width: 1300px) {
+    padding: 2rem 4rem;
   }
 `;
 

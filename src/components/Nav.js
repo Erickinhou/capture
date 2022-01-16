@@ -54,6 +54,23 @@ const StyledNav = styled.nav`
     padding-left: 10rem;
     position: relative;
   }
+  @media screen and (max-width: 1300px) {
+    flex-direction: column;
+    padding: 0;
+    h1 {
+      padding-top: 5px;
+    }
+    ul {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      padding-bottom: 5px;
+      li {
+        padding-left: 0;
+        position: relative;
+      }
+    }
+  }
 `;
 
 export default Nav;
