@@ -65,6 +65,7 @@ const ServicesSection = () => {
 
 const Services = styled(About)`
   flex-direction: row-reverse;
+  display: flex;
   h2 {
     padding-bottom: 5rem;
   }
@@ -75,6 +76,7 @@ const Services = styled(About)`
   @media screen and (max-width: 1300px) {
     display: flex;
     flex-direction: column;
+    padding: 0;
   }
 `;
 
